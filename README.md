@@ -13,15 +13,15 @@ NIF/BIF encoding and decoding remain application responsibilities.
 
 ## Native TCP
 
-Install from this checkout before the first release:
+Add the module to your application:
 
 ```bash
-go test ./...
-go run ./examples/tcp
+go get github.com/puffball1567/koutendb-go@v0.1.0
 ```
 
-Once published, applications can add the module with
-`go get github.com/puffball1567/koutendb-go`.
+Source, examples and tagged releases are available in this repository.
+API documentation is available on
+[pkg.go.dev](https://pkg.go.dev/github.com/puffball1567/koutendb-go).
 
 Start a local server using the KoutenDB distribution:
 
