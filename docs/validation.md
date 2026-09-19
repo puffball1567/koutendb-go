@@ -13,8 +13,18 @@
   vulnerabilities with x/crypto v0.57.0 and Go 1.27.0. It still reports the
   module-level OpenPGP advisory GO-2026-5932; this driver does not import OpenPGP.
 
-macOS and Windows workflow jobs are configured but have not yet run for this
-unpublished repository. Linux results are not claimed as platform certification.
+## CI Results (2026-09-20)
+
+All eight jobs in the [release validation run](https://github.com/puffball1567/koutendb-go/actions/runs/35457854329) passed:
+
+- Linux, macOS and Windows: native tests and cgo-disabled builds on Go 1.26.x
+  and the current stable Go release.
+- Linux and macOS: shared protocol fixtures, all six real-server configurations,
+  and embedded tests and demo.
+- Race detection on Linux/macOS; parser fuzzing and vulnerability checks on Linux.
+
+Windows coverage is native-client only; embedded and real-server validation
+is currently covered on Linux/macOS.
 
 ## Matrix
 
@@ -65,5 +75,4 @@ go run -tags=kouten_embedded ./examples/embedded
 
 CI is configured for Linux/macOS real-server and embedded validation, native Go
 unit tests on Windows, and cgo-disabled builds. No large benchmark or endurance
-workload runs in CI. CI results are only established after the workflow executes;
-configuration alone is not a passing platform result.
+workload runs in CI.
